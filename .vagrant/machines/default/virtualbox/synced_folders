@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/cashier":{"type":null,"mount_options":[],"guestpath":"/home/vagrant/cashier","hostpath":"/Users/diego/Projects/Cashier","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/diego/Projects/Cashier","disabled":false,"__vagrantfile":true}}}

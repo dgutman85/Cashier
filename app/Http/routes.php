@@ -11,6 +11,24 @@
 |
 */
 
+Route::auth();
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['middleware'=>['auth', 'is.active']], function(){
+    Route::group(['namespace'=>'Admin'], function(){
+        Route::resource('moneys','MoneyController');
+        Route::resource('users', 'UserController');
+        Route::resource('boxes', 'BoxController');
+    });
+
+    Route::get('incoming/{id}', 'BoxController@getIncomingForm')->name('incoming');
+    Route::put('incoming/{id}', 'BoxController@incoming')->name('incoming');
+
+    Route::get('outgoing/{id}', 'BoxController@getOutgoingForm')->name('outgoing');
+    Route::put('outgoing/{id}', 'BoxController@outgoing')->name('outgoing');
+
+});
+
