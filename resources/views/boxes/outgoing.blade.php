@@ -50,6 +50,7 @@
                 calculate();
             } else {
                 subtotal.html('$' + 0);
+                subtotal.attr('data-subtotal', quantity * value);
                 calculate();
             }
         });
