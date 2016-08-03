@@ -37,7 +37,7 @@
 @section('scripts')
     <script>
         $('.subtotal, .total').html('$' + 0);
-        $('.quantity').change(function(){
+        $('.quantity').keyup(function(){
             var row = $(this).parents('.money-row');
             var quantity = row.find('.quantity').val();
             var value = row.attr('data-value');
