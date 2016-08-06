@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Box;
+use App\Money;
+use App\Report;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -26,6 +28,8 @@ class BoxController extends Controller
             }
         }
 
+        $this->reportCreate('incoming', $request);
+
         return redirect()
             ->route('boxes.show', Auth::user()->box_id);
     }
@@ -47,6 +51,7 @@ class BoxController extends Controller
                         ->decrement('quantity', $quantity);
                 }
             }
+            $this->reportCreate('outgoing', $request);
 
             return redirect()
                 ->route('boxes.show', Auth::user()->box_id);
@@ -69,5 +74,26 @@ class BoxController extends Controller
         }
 
         return true;
+    }
+
+    private function getAmount($items)
+    {
+        $amount = 0;
+        foreach ($items as $money => $quantity) {
+            $value = Money::where('id', $money)->get()[0]->value;
+            $amount += $value * $quantity;
+        }
+
+        return $amount;
+    }
+
+    private function reportCreate($type, $request)
+    {
+        Report::create([
+            'type' => $type,
+            'motive' => $request->motive,
+            'amount' => $this->getAmount($request->money_id),
+            'responsable' => Auth::user()->name,
+        ]);
     }
 }

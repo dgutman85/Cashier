@@ -30,5 +30,7 @@ Route::group(['middleware'=>['auth', 'is.active']], function(){
     Route::get('outgoing/{id}', 'BoxController@getOutgoingForm')->name('outgoing');
     Route::put('outgoing/{id}', 'BoxController@outgoing')->name('outgoing');
 
+    Route::get('reports', 'ReportController@get')->name('reports');
+
 });
 

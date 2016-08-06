@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBoxMoneysTable extends Migration
+class CreateReportsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,13 @@ class CreateBoxMoneysTable extends Migration
      */
     public function up()
     {
-        Schema::create('box_moneys', function (Blueprint $table) {
+        Schema::create('reports', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('box_id')->unsigned();
-            $table->integer('money_id')->unsigned();
-            $table->float('quantity');
+            $table->enum('type', ['incoming','outgoing']);
+            $table->string('motive');
+            $table->float('amount');
+            $table->string('responsable');
+            $table->timestamps();
         });
     }
 
@@ -27,6 +29,6 @@ class CreateBoxMoneysTable extends Migration
      */
     public function down()
     {
-        Schema::drop('box_moneys');
+        Schema::drop('reports');
     }
 }

@@ -32,15 +32,21 @@
                             </ul>
                         </li>
                     @endif
-                    <li>
-                        <a href="{{ route('boxes.show', Auth::user()->box_id) }}">Caja</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('incoming', Auth::user()->box_id) }}">Entrada</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('outgoing', Auth::user()->box_id) }}">Salida</a>
-                    </li>
+
+                    @if(Auth::user()->box_id)
+                        <li>
+                            <a href="{{ route('boxes.show', Auth::user()->box_id) }}">Caja</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('incoming', Auth::user()->box_id) }}">Entrada</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('outgoing', Auth::user()->box_id) }}">Salida</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('reports') }}">Reportes</a>
+                        </li>
+                    @endif
                 </ul>
             @endif
             <!-- Right Side Of Navbar -->
