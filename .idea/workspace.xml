@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a21331b7-f0af-438e-a77e-cbc3a15c9b02" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/cashier.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vagrant/machines/default/virtualbox/action_set_name" afterPath="$PROJECT_DIR$/.vagrant/machines/default/virtualbox/action_set_name" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ReportController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Report.php" afterPath="$PROJECT_DIR$/app/Report.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/boxes/incoming.blade.php" afterPath="$PROJECT_DIR$/resources/views/boxes/incoming.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/boxes/outgoing.blade.php" afterPath="$PROJECT_DIR$/resources/views/boxes/outgoing.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/reports/reports.blade.php" afterPath="$PROJECT_DIR$/resources/views/reports/reports.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/boxes/show.blade.php" afterPath="$PROJECT_DIR$/resources/views/boxes/show.blade.php" />
     </list>
     <ignored path="Cashier.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,11 +33,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="reports.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="reports.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/reports/reports.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
+            <state relative-caret-position="576">
               <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="show.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/boxes/show.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="312">
+              <caret line="20" column="79" selection-start-line="20" selection-start-column="79" selection-end-line="20" selection-end-column="79" />
               <folding />
             </state>
           </provider>
@@ -122,16 +125,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="navbar.blade.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/navigators/navbar.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="36" column="25" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -175,7 +168,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/MoneyController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/BoxController.php" />
         <option value="$PROJECT_DIR$/app/Box.php" />
-        <option value="$PROJECT_DIR$/resources/views/boxes/show.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_07_30_131811_create_box_moneys_table.php" />
         <option value="$PROJECT_DIR$/database/migrations/2016_08_06_133538_create_reports_table.php" />
         <option value="$PROJECT_DIR$/app/Http/routes.php" />
@@ -191,6 +183,7 @@
         <option value="$PROJECT_DIR$/app/Report.php" />
         <option value="$PROJECT_DIR$/config/cashier.php" />
         <option value="$PROJECT_DIR$/resources/views/reports/reports.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/boxes/show.blade.php" />
       </list>
     </option>
   </component>
@@ -721,12 +714,12 @@
       <workItem from="1470094549648" duration="7147000" />
       <workItem from="1470189887833" duration="404000" />
       <workItem from="1470484253325" duration="8155000" />
-      <workItem from="1470612805648" duration="3694000" />
+      <workItem from="1470612805648" duration="4074000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85825000" />
+    <option name="totallyTimeSpent" value="86205000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="44" width="1440" height="812" extended-state="0" />
@@ -943,13 +936,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/boxes/show.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="51" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.env">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1097,8 +1083,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/reports/reports.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
+        <state relative-caret-position="576">
           <caret line="24" column="73" selection-start-line="24" selection-start-column="73" selection-end-line="24" selection-end-column="73" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/boxes/show.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="20" column="79" selection-start-line="20" selection-start-column="79" selection-end-line="20" selection-end-column="79" />
           <folding />
         </state>
       </provider>

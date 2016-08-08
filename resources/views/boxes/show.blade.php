@@ -15,7 +15,12 @@
                         @foreach($box->money as $money)
                         <tr>
                             <td>{{ $money->name }}</td>
-                            <td>{{ $money->pivot->quantity }}</td>
+                            @if($money->name == 'Monedas')
+                                <td>{{ $money->pivot->quantity }}</td>
+                            @else
+                                <td>{{ number_format($money->pivot->quantity, 0) }}</td>
+                            @endif
+
                             <td>{{ $money->value * $money->pivot->quantity }}</td>
                         </tr>
                         @endforeach
