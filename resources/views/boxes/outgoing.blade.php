@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <h2 class="page-header">Salida</h2>
-                {{ Form::model($box, ['route'=>['outgoing', $box], 'method'=>'put']) }}
+                {{ Form::model($box, ['route'=>['outgoing', $box], 'method'=>'put', 'id'=>'movement_form']) }}
 
                 <p>
                     <div class="row">
@@ -73,5 +73,16 @@
                 $('.total').html('$' + 0);
             }
         }
+
+        $('#movement_form').on('submit', function(e){
+            var sum = 0;
+            $('.subtotal').each(function() {
+                sum += Number($(this).attr('data-subtotal'));
+            });
+            if (sum <= 0) {
+                e.preventDefault();
+                alert('No se realizara un movimiento por $0');
+            }
+        });
     </script>
 @stop

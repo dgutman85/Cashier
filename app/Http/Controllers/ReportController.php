@@ -9,9 +9,9 @@ use App\Http\Requests;
 
 class ReportController extends Controller
 {
-    public function get()
+    public function get(Request $request)
     {
-        $reports = Report::all();
+        $reports = Report::ofType($request->get('type'))->ofDate($request->get('created_at'))->paginate(10);
         return view('reports.reports', compact('reports'));
     }
 }

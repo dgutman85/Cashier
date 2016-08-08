@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <h2 class="page-header">Entrada</h2>
-                {{ Form::model($box, ['route'=>['incoming', $box], 'method'=>'put']) }}
+                {{ Form::model($box, ['route'=>['incoming', $box], 'method'=>'put', 'id'=>'movement_form']) }}
 
                 <p>
                     <div class="row">
@@ -45,7 +45,8 @@
 @section('scripts')
     <script>
         $('.subtotal, .total').html('$' + 0);
-        $('.quantity').keyup(function(){
+        $('.quantity').keyup(function()
+        {
             var row = $(this).parents('.money-row');
             var quantity = row.find('.quantity').val();
             var value = row.attr('data-value');
@@ -61,7 +62,8 @@
             }
         });
 
-        function calculate() {
+        function calculate()
+        {
             var sum = 0;
             $('.subtotal').each(function() {
                 sum += Number($(this).attr('data-subtotal'));
@@ -72,5 +74,16 @@
                 $('.total').html('$' + 0);
             }
         }
+
+        $('#movement_form').on('submit', function(e){
+            var sum = 0;
+            $('.subtotal').each(function() {
+                sum += Number($(this).attr('data-subtotal'));
+            });
+            if (sum <= 0) {
+                e.preventDefault();
+                alert('No se realizara un movimiento por $0');
+            }
+        });
     </script>
 @stop

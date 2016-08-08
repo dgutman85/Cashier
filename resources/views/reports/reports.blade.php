@@ -4,6 +4,14 @@
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
+                <p>
+                    {{ Form::open(['route'=>['reports'], 'method'=>'GET']) }}
+                    Tipo: {{ Form::select('type', ['incoming'=>'Entrada', 'outgoing'=>'Salida'], request()->get('type'), ['placeholder'=>'Seleccione']) }}
+                    | Fecha: {{ Form::date('created_at', request()->get('created_at')) }}
+                    {{ Form::submit('Buscar') }}
+                    {{ Form::close() }}
+                </p>
+
                 <table class="table table-striped table-bordered">
                     <tr>
                         <th>Tipo</th>
@@ -14,7 +22,7 @@
                     </tr>
                     @foreach($reports as $report)
                         <tr>
-                            <td>{{ $report->type }}</td>
+                            <td>{{ config('cashier.types')[$report->type] }}</td>
                             <td>{{ $report->motive }}</td>
                             <td>{{ $report->amount }}</td>
                             <td>{{ $report->responsable }}</td>
@@ -22,6 +30,7 @@
                         </tr>
                     @endforeach
                 </table>
+                {{ $reports->appends(request()->only(['type','created_at']))->render() }}
             </div>
         </div>
     </div>
