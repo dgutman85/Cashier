@@ -18,6 +18,7 @@ class CreateReportsTable extends Migration
             $table->string('motive');
             $table->float('amount');
             $table->string('responsable');
+            $table->integer('box_id')->unsigned();
             $table->timestamps();
         });
     }

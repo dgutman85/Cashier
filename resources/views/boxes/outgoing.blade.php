@@ -23,7 +23,7 @@
                     @foreach($box->money as $money)
                         <tr class="money-row" data-value="{{ $money->value }}">
                             <td>{{ $money->name }}</td>
-                            <td>{{ Form::number('money_id['.$money->id.']', null, ['class'=>'form-control input-sm quantity', 'max'=>$money->pivot->quantity, 'placeholder'=>'Tienes: '.$money->pivot->quantity]) }}</td>
+                            <td>{{ Form::number('money_id['.$money->id.']', null, ['class'=>'form-control input-sm quantity', 'step'=>'any', 'max'=>$money->pivot->quantity, 'placeholder'=>'Tienes: '.$money->pivot->quantity]) }}</td>
                             <td data-subtotal="" class="subtotal">Subtotal</td>
                         </tr>
                     @endforeach

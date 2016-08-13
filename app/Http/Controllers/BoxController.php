@@ -94,6 +94,7 @@ class BoxController extends Controller
             'motive' => $request->motive,
             'amount' => $this->getAmount($request->money_id),
             'responsable' => Auth::user()->name,
+            'box_id' => Auth::user()->box_id,
         ]);
     }
 }
