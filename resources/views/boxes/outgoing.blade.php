@@ -1,6 +1,20 @@
 @extends('layouts.app')
 
 @section('content')
+    <style media="print">
+            .quantity::-webkit-input-placeholder { /* WebKit browsers */
+                color: transparent;
+            }
+            .quantity:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                color: transparent;
+            }
+            .quantity::-moz-placeholder { /* Mozilla Firefox 19+ */
+                color: transparent;
+            }
+            .quantity:-ms-input-placeholder { /* Internet Explorer 10+ */
+                color: transparent;
+            }
+    </style>
     <div class="container">
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
