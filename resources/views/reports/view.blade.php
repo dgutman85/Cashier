@@ -7,6 +7,15 @@
                 <dl class="dl-horizontal">
                     <dt>Fecha</dt>
                     <dd>{{ $report->created_at }}</dd>
+                    <br>
+
+                    <dt>Motivo</dt>
+                    <dd>{{ $report->motive }}</dd>
+                    <br>
+
+                    <dt>Recorrido</dt>
+                    <dd>{{ $report->recorrido }}</dd>
+                    <br>
 
                     <dt>Billetes</dt>
                     <dd>
@@ -25,6 +34,8 @@
                         @endforeach
                         </table>
                     </dd>
+                    <br>
+                    
                     <dt>Monto</dt>
                     <dd><strong>{{ $report->amount }}</strong></dd>
                 </dl>
