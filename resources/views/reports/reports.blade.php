@@ -19,6 +19,7 @@
                         <th>Monto</th>
                         <th>Responsable</th>
                         <th>Fecha</th>
+                        <th>Ver</th>
                     </tr>
                     @foreach($reports as $report)
                         <tr>
@@ -27,6 +28,9 @@
                             <td>{{ $report->amount }}</td>
                             <td>{{ $report->responsable }}</td>
                             <td>{{ \Carbon\Carbon::parse($report->created_at)->format('d/m/y - H:i:s') }}</td>
+                            <td>
+                                <a href="{{route('report.view', $report)}}">Ver</a>
+                            </td>
                         </tr>
                     @endforeach
                 </table>

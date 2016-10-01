@@ -51,7 +51,9 @@ class BoxController extends Controller
                         ->decrement('quantity', $quantity);
                 }
             }
+
             $this->reportCreate('outgoing', $request);
+
 
             return redirect()
                 ->route('boxes.show', Auth::user()->box_id);
@@ -95,6 +97,7 @@ class BoxController extends Controller
             'amount' => $this->getAmount($request->money_id),
             'responsable' => Auth::user()->name,
             'box_id' => Auth::user()->box_id,
+            'detail' => json_encode($request->money_id),
         ]);
     }
 }
