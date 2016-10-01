@@ -60,6 +60,12 @@ class BoxController extends Controller
         return view('boxes.show', compact('box'));
     }
 
+    public function table($id)
+    {
+        $box = Box::with(['money'=>function($query){return $query->orderBy('value','asc');}])->findOrFail($id);
+        return view('boxes.table', compact('box'));
+    }
+
     /**
      * Show the form for editing the specified resource.
      *
