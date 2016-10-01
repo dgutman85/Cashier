@@ -35,7 +35,7 @@
                         </table>
                     </dd>
                     <br>
-                    
+
                     <dt>Monto</dt>
                     <dd><strong>{{ $report->amount }}</strong></dd>
                 </dl>

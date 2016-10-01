@@ -22,7 +22,9 @@ Route::group(['middleware'=>['auth', 'is.active']], function(){
         Route::resource('moneys','MoneyController');
         Route::resource('users', 'UserController');
         Route::resource('boxes', 'BoxController');
+        Route::get('boxes/table/{id}', 'BoxController@table')->name('table');
     });
+
 
     Route::get('incoming/{id}', 'BoxController@getIncomingForm')->name('incoming');
     Route::put('incoming/{id}', 'BoxController@incoming')->name('incoming');
