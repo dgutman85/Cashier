@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Report extends Model
 {
-    protected $fillable = ['type','motive','amount','responsable','box_id','detail'];
+    protected $fillable = ['type','motive','amount','responsable','box_id','detail','recorrido'];
 
     public function scopeOfType($query, $type) {
         if(!empty($type)) {

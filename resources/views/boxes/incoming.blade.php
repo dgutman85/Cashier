@@ -9,7 +9,8 @@
 
                 <p>
                     <div class="row">
-                        <div class="col-md-6 col-xs-8">{{ Form::text('motive', null, ['class'=>'form-control input-sm col-md-6', 'placeholder'=>'Indique motivo', 'required'=>'']) }}</div>
+                        <div class="col-md-3 col-xs-4">{{ Form::text('motive', null, ['class'=>'form-control input-sm col-md-12', 'placeholder'=>'Indique motivo', 'required'=>'']) }}</div>
+                        <div class="col-md-3 col-xs-4">{{ Form::text('recorrido', null, ['class'=>'form-control input-sm col-md-12', 'placeholder'=>'Indique recorrido']) }}</div>
                         <div class="col-md-6 col-xs-4 text-right">Fecha: {{ \Carbon\Carbon::now()->format('d/m/y') }}</div>
                     </div>
                 </p>
