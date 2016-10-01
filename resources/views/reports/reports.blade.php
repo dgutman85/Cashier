@@ -16,6 +16,7 @@
                     <tr>
                         <th>Tipo</th>
                         <th>Motivo</th>
+                        <th>Recorrido</th>
                         <th>Monto</th>
                         <th>Responsable</th>
                         <th>Fecha</th>
@@ -25,6 +26,7 @@
                         <tr>
                             <td>{{ config('cashier.types')[$report->type] }}</td>
                             <td>{{ $report->motive }}</td>
+                            <td>{{ $report->recorrido }}</td>
                             <td>{{ $report->amount }}</td>
                             <td>{{ $report->responsable }}</td>
                             <td>{{ \Carbon\Carbon::parse($report->created_at)->format('d/m/y - H:i:s') }}</td>
