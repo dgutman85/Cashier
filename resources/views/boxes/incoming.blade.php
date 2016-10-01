@@ -33,7 +33,7 @@
                     </tr>
                 </table>
 
-                {{ Form::submit('Confirmar entrada', ['class'=>'btn btn-success']) }}
+                <input type="submit" class="btn btn-success" onclick="confirm('Confirmar esta acción?')">
 
                 {{ Form::close() }}
 
