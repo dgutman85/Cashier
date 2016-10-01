@@ -98,7 +98,7 @@ class BoxController extends Controller
             'responsable' => Auth::user()->name,
             'box_id' => Auth::user()->box_id,
             'detail' => json_encode($request->money_id),
-            'recorrido' => ($request->recorrido)? $request->recorrido : null,
+            'recorrido' => ($request->recorrido)? $request->recorrido : '',
         ]);
     }
 }
