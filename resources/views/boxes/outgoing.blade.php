@@ -30,19 +30,19 @@
                 </p>
 
                 <table class="table table-striped table-bordered">
-                    <tr>
+                    <tr class="text-danger">
                         <th>Valor</th>
                         <th>Cantidad</th>
                         <th>SubTotal</th>
                     </tr>
                     @foreach($box->money as $money)
                         <tr class="money-row" data-value="{{ $money->value }}">
-                            <td>{{ $money->name }}</td>
+                            <td><strong>{{ $money->name }}</strong></td>
                             <td>{{ Form::number('money_id['.$money->id.']', null, ['class'=>'form-control input-sm quantity', 'step'=>'any', 'max'=>$money->pivot->quantity, 'placeholder'=>'Tienes: '.$money->pivot->quantity]) }}</td>
                             <td data-subtotal="" class="subtotal">Subtotal</td>
                         </tr>
                     @endforeach
-                    <tr>
+                    <tr class="text-danger">
                         <th colspan="2">Total</th>
                         <th class="total"></th>
                     </tr>
