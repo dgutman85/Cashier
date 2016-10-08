@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <h2 class="page-header">Entrada</h2>
-                {{ Form::model($box, ['route'=>['incoming', $box], 'method'=>'put', 'id'=>'movement_form']) }}
+                {{ Form::model($box, ['route'=>['incoming', $box], 'method'=>'put', 'id'=>'movement_form', 'onsubmit'=>"return confirm('Confirmar esta acción?')"]) }}
 
                 <p>
                     <div class="row">
@@ -34,7 +34,7 @@
                     </tr>
                 </table>
 
-                <input type="submit" class="btn btn-success" onclick="confirm('Confirmar esta acción?')">
+                <input type="submit" class="btn btn-success">
 
                 {{ Form::close() }}
 
