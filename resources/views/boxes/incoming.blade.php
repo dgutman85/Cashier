@@ -16,19 +16,19 @@
                 </p>
 
                 <table class="table table-bordered table-striped">
-                    <tr>
+                    <tr class="text-danger">
                         <th>Valor</th>
                         <th>Cantidad</th>
                         <th>SubTotal</th>
                     </tr>
                     @foreach($box->money as $money)
                         <tr class="money-row" data-value="{{ $money->value }}">
-                            <td>{{ $money->name }}</td>
+                            <td><strong>{{ $money->name }}</strong></td>
                             <td>{{ Form::number('money_id['.$money->id.']', null, ['class'=>'form-control input-sm quantity', 'step'=>'any']) }}</td>
                             <td data-subtotal="" class="subtotal"></td>
                         </tr>
                     @endforeach
-                    <tr>
+                    <tr class="text-danger">
                         <th colspan="2">Total</th>
                         <th class="total"></th>
                     </tr>
