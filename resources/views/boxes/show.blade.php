@@ -5,7 +5,10 @@
         <div class="row">
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
-                    <div class="panel-heading">{{ $box->name }}</div>
+                    <div class="panel-heading">
+                        {{ $box->name }}
+                        <span class="pull-right">Fecha: {{ \Carbon\Carbon::now()->format('d/m/y') }}</span>
+                    </div>
                     <div id="content"></div>
                 </div>
             </div>
