@@ -19,7 +19,7 @@
     <tr class="text-danger">
         <th colspan="2">Total</th>
         <th>
-            ${{ $box->money->sum(function($money){ return $money->value * $money->pivot->quantity; }) }}
+            ${{ number_format($box->money->sum(function($money){ return $money->value * $money->pivot->quantity; }),2,',','.') }}
         </th>
     </tr>
 </table>
