@@ -58,7 +58,7 @@
 @stop
 
 @section('scripts')
-    <script src="{{ asset('js/select2.min.js') }}"></script>
+    <script src="{{ asset('js/accounting.min.js') }}"></script>
     <script>
         $('.subtotal, .total').html('$' + 0);
         $('.quantity').keyup(function(){
@@ -83,7 +83,7 @@
                 sum += Number($(this).attr('data-subtotal'));
             });
             if (sum > 0) {
-                $('.total').html('$' + sum);
+                $('.total').html('$'+accounting.formatNumber(sum,2,'.',','));
             } else {
                 $('.total').html('$' + 0);
             }

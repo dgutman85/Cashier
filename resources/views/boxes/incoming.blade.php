@@ -44,10 +44,10 @@
 @stop
 
 @section('scripts')
+    <script src="{{ asset('js/accounting.min.js') }}"></script>
     <script>
         $('.subtotal, .total').html('$' + 0);
-        $('.quantity').keyup(function()
-        {
+        $('.quantity').keyup(function(){
             var row = $(this).parents('.money-row');
             var quantity = row.find('.quantity').val();
             var value = row.attr('data-value');
@@ -63,14 +63,13 @@
             }
         });
 
-        function calculate()
-        {
+        function calculate() {
             var sum = 0;
             $('.subtotal').each(function() {
                 sum += Number($(this).attr('data-subtotal'));
             });
             if (sum > 0) {
-                $('.total').html('$' + sum);
+                $('.total').html('$'+accounting.formatNumber(sum,2,'.',','));
             } else {
                 $('.total').html('$' + 0);
             }
