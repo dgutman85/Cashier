@@ -13,7 +13,7 @@ class AddReportDetail extends Migration
     public function up()
     {
         Schema::table('reports', function ($table) {
-            $table->json('detail');
+            $table->string('detail');
         });
     }
 
