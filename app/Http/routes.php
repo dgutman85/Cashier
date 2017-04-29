@@ -35,5 +35,7 @@ Route::group(['middleware'=>['auth', 'is.active']], function(){
     Route::get('reports', 'ReportController@get')->name('reports');
     Route::get('reports/{id}', 'ReportController@view')->name('report.view');
 
+    Route::resource('clients', 'ClientController');
+
 });
 
