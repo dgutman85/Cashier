@@ -50,7 +50,7 @@
                             <a href="#">Equipos S.U.B.E</a>
                         </li>
                         <li>
-                            <a href="#">Equipos DTE</a>
+                            <a href="{{ route('dte.index') }}">Equipos DTE</a>
                         </li>
                         <li>
                             <a href="{{ route('clients.index') }}">Clientes</a>

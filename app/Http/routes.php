@@ -37,5 +37,7 @@ Route::group(['middleware'=>['auth', 'is.active']], function(){
 
     Route::resource('clients', 'ClientController');
 
+    Route::resource('dte', 'DTEController');
+
 });
 
