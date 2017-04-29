@@ -53,7 +53,7 @@
                             <a href="#">Equipos DTE</a>
                         </li>
                         <li>
-                            <a href="#">Clientes</a>
+                            <a href="{{ route('clients.index') }}">Clientes</a>
                         </li>
                     @endif
                 </ul>
