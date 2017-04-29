@@ -47,7 +47,7 @@
                             <a href="{{ route('reports') }}">Reportes</a>
                         </li>
                         <li>
-                            <a href="#">Equipos S.U.B.E</a>
+                            <a href="{{ route('sube.index') }}">Equipos S.U.B.E</a>
                         </li>
                         <li>
                             <a href="{{ route('dte.index') }}">Equipos DTE</a>

@@ -39,5 +39,7 @@ Route::group(['middleware'=>['auth', 'is.active']], function(){
 
     Route::resource('dte', 'DTEController');
 
+    Route::resource('sube', 'SUBEController');
+
 });
 

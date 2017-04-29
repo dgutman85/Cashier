@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class SUBE extends Model
 {
-    protected $table = "sube";
+    public $table = "sube";
+
+    protected $fillable = ['id_pos', 'sn'];
 
 }

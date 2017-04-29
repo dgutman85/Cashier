@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\SUBE;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -13,9 +14,11 @@ class SUBEController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $req)
     {
-        //
+        $subes = SUBE::where($req->all())->paginate();
+
+        return view('sube.index', compact(['subes']));
     }
 
     /**
@@ -25,7 +28,7 @@ class SUBEController extends Controller
      */
     public function create()
     {
-        //
+        return view('sube.create');
     }
 
     /**
@@ -36,7 +39,14 @@ class SUBEController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'id_pos' => 'required|unique:sube,id_pos',
+            'sn' => 'required|unique:sube,sn'
+        ]);
+
+        SUBE::create($request->all());
+
+        return redirect()->route('sube.index');
     }
 
     /**
@@ -58,7 +68,9 @@ class SUBEController extends Controller
      */
     public function edit($id)
     {
-        //
+        $sube = SUBE::findOrFail($id);
+
+        return view('sube.edit', compact(['sube']));
     }
 
     /**
@@ -70,7 +82,17 @@ class SUBEController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $this->validate($request, [
+            'id_pos' => 'required|unique:sube,id_pos,' . $id,
+            'sn' => 'required|unique:sube,sn,' . $id
+        ]);
+
+        $sube = SUBE::findOrFail($id);
+
+        $sube->update($request->all());
+
+        return redirect()->route('sube.index');
     }
 
     /**
