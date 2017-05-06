@@ -17,6 +17,7 @@ class CreateDTEsTable extends Migration
             $table->integer('nro_tel')->nullable();
             $table->integer('sim');
             $table->integer('imei');
+            $table->integer('client_id')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateDTEsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('d_t_es');
+        Schema::drop('dte');
     }
 }

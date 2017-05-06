@@ -16,6 +16,7 @@ class CreateSUBEsTable extends Migration
             $table->increments('id');
             $table->string('id_pos');
             $table->string('sn');
+            $table->integer('client_id')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ class CreateSUBEsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('s_u_b_es');
+        Schema::drop('sube');
     }
 }
